@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mc2squared.net.au/schemas/hyperspace-chromoting-host-config.json",
+  "title": "HyperSpace Chromoting Linux Host Config",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "orgId",
+    "machineId",
+    "agentId",
+    "sessionId",
+    "displayId",
+    "displays"
+  ],
+  "properties": {
+    "version": { "const": 1 },
+    "orgId": { "type": "string", "minLength": 1 },
+    "machineId": { "type": "string", "minLength": 1 },
+    "agentId": { "type": "string", "minLength": 1 },
+    "sessionId": { "type": "string", "minLength": 1 },
+    "displayId": { "type": "string", "minLength": 1 },
+    "displays": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "width", "height", "primary"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string" },
+          "x": { "type": "integer" },
+          "y": { "type": "integer" },
+          "width": { "type": "integer", "minimum": 1 },
+          "height": { "type": "integer", "minimum": 1 },
+          "primary": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}
