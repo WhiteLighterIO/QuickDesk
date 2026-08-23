@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "sourceKind": "chromium-remoting-linux",
+  "requiredPaths": [
+    "BUILD.gn",
+    "remoting/host/BUILD.gn",
+    "remoting/quickdesk/host/BUILD.gn",
+    "remoting/quickdesk/host/quickdesk_native_messaging_host_entry_point.cc",
+    "remoting/quickdesk/host/quickdesk_native_messaging_host_main.cc"
+  ],
+  "forbiddenAuthAuthorities": [
+    "quickdesk-device-id",
+    "quickdesk-access-code"
+  ],
+  "notes": "HyperSpace authorization remains external and authoritative. This contract only validates the reviewed source shape required by the Linux host build."
+}
